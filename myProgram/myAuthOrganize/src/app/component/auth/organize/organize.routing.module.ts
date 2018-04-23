@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { OrganizeComponent } from './organize.component';
+import { AuthGuard } from '../../../project-config/route/auth-guard';
 
 
 const appRoutes: Routes = [
   { path: '',
-    component: OrganizeComponent
+    component: OrganizeComponent,
+    canActivate: [AuthGuard],
   }
 ];
 
